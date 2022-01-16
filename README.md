@@ -15,7 +15,8 @@ Amazing Prime Video, a movie and tv streaming platform on Amazing Prime, decided
 For this analysis, we extracted data from 3 different data files. The cleaning process had multiple steps to it from removing duplicates, changing the format of the data so they are similar to each other and easier to read, and merging data if there are missing values from one dataset but available in another dataset. From there, we combined the data into one dataframe and loaded the data into SQL tables. In our analysis, we discovered that there are competing data from the different datasets provided. We created a table to decide which dataset to keep, which dataset to drop, and how we should fill in the missing values from the dataset that we are going to keep. After we cleaned the dataframe, we loaded the data into SQL tables with pgAdmin.  
 <img src="Resources/competing_data.PNG">  
 
-Since the data was coming from multiple sources, some of the data was listed as, for example, 'title' and 'original title.' For those similarities, we combined them into under one column and removed the other. For differences in formats such as 'January 15, 2022' and '01-15-2022', we used regular expression (regex) to change the formatting of our data so all of the values are in similar formats. This change would give a clear picture of what the data is supposed to represent without confusion when dealing with the data in each column.  
+Since the data was coming from multiple sources, some of the data was listed as, for example, 'running_time' and 'runtime'. For those similarities, we combined them into one column and removed the other. For differences in formats such as 'January 15, 2022' and '01-15-2022', we used regular expression (regex) to change the formatting of our data so all of the values are in similar formats. This change would give a clear picture of what the data is supposed to represent without confusion when analyzing the data in each column.  
+<img src="Resources/regex_date.PNG">  
 
 After cleaning all the data, we combined all the data that we need into a single dataframe. From there, loading the data into SQL tables was the simple and easy part.
 
@@ -27,7 +28,7 @@ From our analysis, we were able to load 6,052 movies and over 26 million ratings
 ## Challenge Summary  
 
 **Summary**  
-The purpose of this project is to extra data, transform or clean the data, and load the data into SQL tables for a hackathon sponsored by Amazing Prime Video to predict which low budget movies will become popular so they could buy the streaming rights to those movies. After performing our ETL (extract, transform, load), we were still able to aquire a large and clean dataset for movies and ratings.  
+The purpose of this project is to extract data, transform or clean the data, and load the data into SQL tables for a hackathon sponsored by Amazing Prime Video to predict which low budget movies will become popular so they could buy the streaming rights to those movies. After performing our ETL (extract, transform, load), we were still able to aquire a large and clean dataset for movies and ratings to be used at the hackathon.  
 
 ### Codes Used  
 (Please look at specific files for codes used)  
